@@ -1,0 +1,54 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:vm="using:AvaloniaApplication1.ViewModels"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        x:Class="AvaloniaApplication1.Views.MainWindow"
+        x:DataType="vm:MainWindowViewModel"
+        Icon="/Assets/avalonia-logo.ico"
+        Title="AvaloniaApplication1"
+        x:CompileBindings="True"
+        >
+
+    <Design.DataContext>
+        <!-- This only sets the DataContext for the previewer in an IDE,
+             to set the actual DataContext for runtime, set the DataContext property in code (look at App.axaml.cs) -->
+        <vm:MainWindowViewModel/>
+    </Design.DataContext>
+
+    <Grid RowDefinitions="*,*" ColumnDefinitions="*"> 
+        <TextBlock Text="{Binding Greeting}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        <StackPanel Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center">
+            
+            <StackPanel Orientation="Horizontal">
+                <TextBlock>Совершеннолетний?</TextBlock>     
+                <TextBlock Text="{Binding IsOld}"></TextBlock>
+            </StackPanel>
+            <DatePicker DayFormat="ddd dd" SelectedDate="{Binding Date}"/>
+            
+            <ListBox ItemsSource="{Binding List}">
+                <ListBox.DataTemplates>
+                    <DataTemplate>
+                        <StackPanel>
+                            <TextBlock Text="{Binding Header}"></TextBlock>
+                        </StackPanel>
+                    </DataTemplate>
+                </ListBox.DataTemplates>
+            </ListBox>
+            <!-- <StackPanel Orientation="Horizontal"> -->
+            <!--     <TextBlock>Дело 1</TextBlock> -->
+            <!--     <CheckBox/> -->
+            <!-- </StackPanel> -->
+            <!-- <StackPanel Orientation="Horizontal"> -->
+            <!--     <TextBlock>Дело 2</TextBlock> -->
+            <!--     <CheckBox/> -->
+            <!-- </StackPanel> -->
+            <!-- <StackPanel Orientation="Horizontal"> -->
+            <!--     <TextBlock>Дело 3</TextBlock> -->
+            <!--     <CheckBox/> -->
+            <!-- </StackPanel> -->
+        </StackPanel>
+    </Grid>
+
+</Window>
