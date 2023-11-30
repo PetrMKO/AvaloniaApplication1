@@ -21,14 +21,15 @@
         <TextBlock Text="{Binding Greeting}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
         <StackPanel Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center">
             
-            <ListBox ItemsSource="{Binding List}">
-                <ListBox.DataTemplates>
+            <ListBox ItemsSource="{Binding List}" Width="200">
+                <ListBox.ItemTemplate >
                     <DataTemplate>
-                        <StackPanel>
+                        <StackPanel Orientation="Horizontal">
                             <TextBlock Text="{Binding Header}"></TextBlock>
+                           <CheckBox></CheckBox>
                         </StackPanel>
                     </DataTemplate>
-                </ListBox.DataTemplates>
+                </ListBox.ItemTemplate>
             </ListBox>
             <!-- <StackPanel Orientation="Horizontal"> -->
             <!--     <TextBlock>Дело 1</TextBlock> -->

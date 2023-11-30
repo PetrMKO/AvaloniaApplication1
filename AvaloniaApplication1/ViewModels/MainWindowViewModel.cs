@@ -12,7 +12,12 @@ public class MainWindowViewModel : INotifyPropertyChanged
     public string Greeting => "Welcome to Avalonia!";
 
     public IList<SampleDto> List { get; set; } = new ObservableCollection<SampleDto>
-        { { new SampleDto { Header = "", Message = "" } } };
+    {
+         new SampleDto { Header = "Заголовок", Message = "asdf" },
+         new SampleDto { Header = "Заголовок2", Message = "hg" },
+         new SampleDto { Header = "Заголовок3", Message = "ashd" },
+         new SampleDto { Header = "Заголовок34", Message = "';lkj" },
+    };
 
     public event PropertyChangedEventHandler? PropertyChanged;
 
