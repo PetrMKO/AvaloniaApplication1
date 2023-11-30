@@ -11,30 +11,7 @@ public class MainWindowViewModel : INotifyPropertyChanged
 {
     public string Greeting => "Welcome to Avalonia!";
 
-    private DateTimeOffset _date;
-    
-    private bool _isOld;
-    
-    public DateTimeOffset Date
-    {
-        get => _date;
-
-        set
-        {
-            SetField(ref _date, value);
-            var newDate = DateTime.Now.Year;
-            SetField(ref _isOld, true);
-           
-        }
-    }
-
-    public bool IsOld
-    {
-        get => _isOld;
-        set => SetField(ref _isOld, value);
-    }
-
-    public IList<SampleDto> List { get; } = new ObservableCollection<SampleDto>
+    public IList<SampleDto> List { get; set; } = new ObservableCollection<SampleDto>
         { { new SampleDto { Header = "", Message = "" } } };
 
     public event PropertyChangedEventHandler? PropertyChanged;

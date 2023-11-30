@@ -21,12 +21,6 @@
         <TextBlock Text="{Binding Greeting}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
         <StackPanel Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center">
             
-            <StackPanel Orientation="Horizontal">
-                <TextBlock>Совершеннолетний?</TextBlock>     
-                <TextBlock Text="{Binding IsOld}"></TextBlock>
-            </StackPanel>
-            <DatePicker DayFormat="ddd dd" SelectedDate="{Binding Date}"/>
-            
             <ListBox ItemsSource="{Binding List}">
                 <ListBox.DataTemplates>
                     <DataTemplate>
